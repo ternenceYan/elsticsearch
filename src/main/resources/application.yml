@@ -1,0 +1,21 @@
+
+##esµÿ÷∑
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/db1?characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=false&useSSL=true
+  data:
+    elasticsearch:
+      cluster-nodes: 127.0.0.1:9300 #elasticsearchµÿ÷∑
+
+mybatis:
+  type-aliases-package: com.mooc.pojo
+  mapper-locations: classpath:mapper/*.xml
+#mysql”Ôæ‰¥Ú”°
+logging:
+  level:
+    com.mooc.mapper: debug
