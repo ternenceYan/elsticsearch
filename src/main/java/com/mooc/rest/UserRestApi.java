@@ -53,7 +53,7 @@ public class UserRestApi {
     @RequestMapping(value = "getUserEsByAdd",method = RequestMethod.GET)
     @ResponseBody
     public User getUserByAdd (@RequestParam(value = "address",required = false) String address) {
-        User user = esUser.findByMobile(address);
+        User user = esUser.findByAddress(address);
         return user;
     }
 

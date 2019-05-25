@@ -7,5 +7,5 @@ public interface EsUser extends ElasticsearchRepository<User,Long> {
 
     User findByUserNameOrAddress (String name,String address);
 
-    User findByMobile(String mobile);
+    User findByAddress(String mobile);
 }
