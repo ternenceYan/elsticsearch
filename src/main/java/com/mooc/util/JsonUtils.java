@@ -55,7 +55,6 @@ public class JsonUtils {
 
     public static String toJson (Object object) {
         try {
-            int i = 1/0;
             return gson.toJson(object);
         } catch (Exception e) {
             throw new BaseException(ErrorCode.JSON_ERROR);
