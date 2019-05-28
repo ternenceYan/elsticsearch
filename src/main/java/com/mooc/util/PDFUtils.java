@@ -103,7 +103,7 @@ public class PDFUtils {
             r4.setTextPosition(20);
             r4.setText("我很帅啊");
             r4.addBreak(BreakType.PAGE);
-            r4.setText("臭不要俩");
+            r4.setText("信息接口");
             r4.setItalic(true);
             //This would imply that this break shall be treated as a simple line break, and break the line after that word:
 
@@ -113,7 +113,7 @@ public class PDFUtils {
             r5.addCarriageReturn();
             r5.setText("测试");
             r5.addBreak();
-            r5.setText("找你妹,");
+            r5.setText("地方");
 
             r5.addBreak(BreakClear.ALL);
             r5.setText("呀,最后一页");
