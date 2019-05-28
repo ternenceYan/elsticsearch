@@ -53,6 +53,7 @@ public class JsonTest {
         }
         for (int i = 0; i < userList.size(); i ++) {
             User user2 = userList.get(0);
+
             System.out.println(user2.getAddress()+"-"+user2.getUserName());
         }
     }
