@@ -2,6 +2,9 @@ package com.mooc.tools;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.reflect.TypeToken;
+import com.mooc.enums.ErrorCode;
+import com.mooc.exceptions.BaseException;
 import com.mooc.pojo.User;
 import com.mooc.util.JsonUtils;
 import org.junit.Test;
@@ -41,5 +44,16 @@ public class JsonTest {
         JSONObject jsonObject = (JSONObject) jsonArray.get(1);
         System.out.println(jsonObject.get("mobile"));
         System.out.println(jsonArray.get(1));
+
+        List<User> userList = null;
+        try {
+            userList = JsonUtils.fromJson(json, new TypeToken<List<User>>(){}.getType());
+        } catch (Exception e) {
+            throw new BaseException(ErrorCode.JSON_ERROR);
+        }
+        for (int i = 0; i < userList.size(); i ++) {
+            User user2 = userList.get(0);
+            System.out.println(user2.getAddress()+"-"+user2.getUserName());
+        }
     }
 }
