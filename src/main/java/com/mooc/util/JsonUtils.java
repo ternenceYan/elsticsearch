@@ -2,6 +2,11 @@ package com.mooc.util;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
+import com.mooc.enums.ErrorCode;
+import com.mooc.exceptions.BaseException;
+
+import java.lang.reflect.Type;
 
 public class JsonUtils {
 
@@ -29,7 +34,33 @@ public class JsonUtils {
 
     }
 
+    private static Gson gson = new Gson();
 
+    public static <T> T fromJson (String jsonStr, Class<T> cls) {
+        try {
+            return gson.fromJson(jsonStr,cls);
+        } catch (Exception e) {
+            throw new BaseException(ErrorCode.JSON_ERROR);
+        }
+    }
+
+    public static <T> T fromJson (String jsonStr, Type type) {
+
+        try {
+            return gson.fromJson(jsonStr,type);
+        } catch (Exception e) {
+            throw new BaseException(ErrorCode.JSON_ERROR);
+        }
+    }
+
+    public static String toJson (Object object) {
+        try {
+            int i = 1/0;
+            return gson.toJson(object);
+        } catch (Exception e) {
+            throw new BaseException(ErrorCode.JSON_ERROR);
+        }
+    }
 
     public static void main(String[] args) {
         test();
