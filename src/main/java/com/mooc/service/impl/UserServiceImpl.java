@@ -6,9 +6,11 @@ import com.mooc.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
     @Resource
     private UserMapper userMapper;
 
@@ -17,5 +19,10 @@ public class UserServiceImpl implements UserService {
 
         return userMapper.getUserById(id);
 
+    }
+
+    @Override
+    public List<User> listUser() {
+        return userMapper.selectUsers();
     }
 }

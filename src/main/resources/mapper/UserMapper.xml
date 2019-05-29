@@ -22,4 +22,10 @@
         where
         id = #{id}
     </select>
+
+    <select id="selectUsers" resultMap="BaseResultMap">
+        select
+        <include refid="BaseSql"/>
+        from tb_user
+    </select>
 </mapper>

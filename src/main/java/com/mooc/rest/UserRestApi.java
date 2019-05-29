@@ -2,7 +2,9 @@ package com.mooc.rest;
 
 import com.mooc.pojo.User;
 import com.mooc.resposity.EsUser;
+import com.mooc.result.CommonResult;
 import com.mooc.service.UserService;
+import com.mooc.util.JsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -64,4 +67,28 @@ public class UserRestApi {
         esUser.deleteById(id);
         return "success";
     }
+
+    @ApiOperation(value = "用户信息列表",notes = "用户管理")
+    @RequestMapping(value = "list",method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult list () {
+        List<User> data = userService.listUser();
+        CommonResult commonResult = CommonResult.success(data);
+        if (commonResult.getCode() == 1000) {
+            System.out.println("成功啦！！！！");
+        }
+        return CommonResult.success(data);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

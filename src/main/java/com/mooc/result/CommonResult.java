@@ -1,11 +1,36 @@
 package com.mooc.result;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.mooc.enums.ErrorCode;
-
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 public class CommonResult<T> {
     private long code;
     private String msg;
     private T data;
+
+    public long getCode() {
+        return code;
+    }
+
+    public void setCode(long code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 
     public CommonResult () {
 
