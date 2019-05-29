@@ -1,5 +1,4 @@
 
-##es��ַ
 server:
   port: 8081
 spring:
@@ -10,12 +9,12 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/db1?characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=false&useSSL=true
   data:
     elasticsearch:
-      cluster-nodes: 127.0.0.1:9300 #elasticsearch��ַ
+      cluster-nodes: 127.0.0.1:9300 #elasticsearch
 
 mybatis:
   type-aliases-package: com.mooc.pojo
   mapper-locations: classpath:mapper/*.xml
-#mysql����ӡ
+#mysql打印sql
 logging:
   level:
     com.mooc.mapper: debug
