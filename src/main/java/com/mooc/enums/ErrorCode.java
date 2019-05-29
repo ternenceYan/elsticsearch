@@ -1,8 +1,10 @@
 package com.mooc.enums;
 
 public enum ErrorCode {
-    JSON_ERROR(1001,"JSON转换异常！"),
-    FILE_ERROR(1002,"文件接收异常！");
+    SUCCESS(1000, "成功"),
+    FAIL(1001, "失败"),
+    JSON_ERROR(1002,"JSON转换异常！"),
+    FILE_ERROR(1003,"文件接收异常！");
     private Integer code;
     private String msg;
     ErrorCode (Integer code, String msg) {
